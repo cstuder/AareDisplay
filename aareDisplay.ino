@@ -16,9 +16,11 @@
 #include <ArduinoJson.h> // Decode JSON responses
 
 // Local config
+String API_URL = "http://aare.schwumm.ch/api/current?app=ch.existenz.aaredisplay&version=1.0.0 ";
+String API_temperaturkey = "temperature";
 int DTime = 4;            // [ms] Display refresh time
 float temperature = 0.0;  // [°C] Temperature value cache
-long mydelay = 10 * 1000; // [ms] Time between updates from webservice
+long mydelay = 10 * 1000; // [ms] Time between updates from webservice // TODO: Switch to 5 min
 long timer = millis();    // Global refresh timer
 
 void setup()
@@ -61,6 +63,8 @@ void setup()
   Serial.println(WiFi.SSID());
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+  Serial.print("Using API: ");
+  Serial.println(API_URL);
   digitalWrite(16, HIGH); // Turn off connection LED
 }
 
@@ -72,7 +76,7 @@ void loop()
     {
       HTTPClient http;
 
-      http.begin("http://aare.schwumm.ch/api/current");
+      http.begin(API_URL);
       int httpCode = http.GET();
 
       if (httpCode > 0)
@@ -83,7 +87,7 @@ void loop()
         // Parse JSOn
         StaticJsonBuffer<500> jsonBuffer;
         JsonObject &root = jsonBuffer.parseObject(payload);
-        temperature = root["temperature"];
+        temperature = root[API_temperaturkey];
         Serial.println(temperature);
       }
 
