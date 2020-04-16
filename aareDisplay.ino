@@ -31,8 +31,8 @@ void setup()
   pinMode(16, OUTPUT); // Turn on internal LED
   digitalWrite(16, LOW);
 
-  Wire.pins(5, 4);
-  Wire.begin(); // Defaults to address 0
+  Wire.pins(5, 4); // Corresponds to D2, D1
+  Wire.begin();    // Defaults to address 0
 
   Wire.beginTransmission(0x20);
   Wire.write(0x00); // A Port

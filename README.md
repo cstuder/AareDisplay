@@ -15,3 +15,4 @@ ESP8266 based display of the current Aare temperature on a seven-segment display
 ## Known issues
 
 - Display refresh.
+- Floating point value.
