@@ -1,0 +1,226 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Aare Display"
+Date "2020-04-16"
+Rev "v1"
+Comp "Bureau für digitale Existenz"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Interface_Expansion:MCP23017_SP Multiplexer
+U 1 1 5E98A4F2
+P 6050 3900
+F 0 "Multiplexer" H 6050 5181 50  0000 C CNN
+F 1 "MCP23017_SP" H 6050 5090 50  0000 C CNN
+F 2 "Package_DIP:DIP-28_W7.62mm" H 6250 2900 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 6250 2800 50  0001 L CNN
+	1    6050 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 4700 4050 5000
+Wire Wire Line
+	4050 5000 5200 5000
+Wire Wire Line
+	4150 3100 4150 2800
+Wire Wire Line
+	4150 2800 5200 2800
+$Comp
+L power:+5V #PWR0101
+U 1 1 5E991E24
+P 2350 4550
+F 0 "#PWR0101" H 2350 4400 50  0001 C CNN
+F 1 "+5V" H 2365 4723 50  0000 C CNN
+F 2 "" H 2350 4550 50  0001 C CNN
+F 3 "" H 2350 4550 50  0001 C CNN
+	1    2350 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5E9913A6
+P 2350 4800
+F 0 "#PWR0102" H 2350 4550 50  0001 C CNN
+F 1 "GND" H 2355 4627 50  0000 C CNN
+F 2 "" H 2350 4800 50  0001 C CNN
+F 3 "" H 2350 4800 50  0001 C CNN
+	1    2350 4800
+	1    0    0    -1  
+$EndComp
+Text Label 4750 3400 1    50   ~ 0
+I2C
+Wire Notes Line
+	2150 4250 2600 4250
+Wire Notes Line
+	2600 4250 2600 5150
+Wire Notes Line
+	2600 5150 2150 5150
+Wire Notes Line
+	2150 5150 2150 4250
+Text Label 2300 4200 0    50   ~ 0
+USB
+Wire Wire Line
+	2350 4550 3000 4550
+Wire Wire Line
+	3000 4550 3000 2800
+Wire Wire Line
+	3000 2800 3950 2800
+Wire Wire Line
+	3950 2800 3950 3100
+Wire Wire Line
+	2350 4800 3300 4800
+Wire Wire Line
+	3300 4800 3300 5000
+Wire Wire Line
+	3300 5000 4050 5000
+Connection ~ 4050 5000
+$Comp
+L MCU_Module:WeMos_D1_mini ESP8266_Microcontroller
+U 1 1 5E9844CB
+P 4050 3900
+F 0 "ESP8266_Microcontroller" H 4050 3011 50  0000 C CNN
+F 1 "WeMos_D1_mini or similar" H 4050 2920 50  0000 C CNN
+F 2 "Module:WEMOS_D1_mini_light" H 4050 2750 50  0001 C CNN
+F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 2200 2750 50  0001 C CNN
+	1    4050 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 4700 5200 4700
+Wire Wire Line
+	5200 4700 5200 5000
+Connection ~ 5200 5000
+Wire Wire Line
+	5200 5000 6050 5000
+Wire Wire Line
+	5350 4600 5200 4600
+Wire Wire Line
+	5200 4600 5200 4700
+Connection ~ 5200 4700
+Wire Wire Line
+	5350 4500 5200 4500
+Wire Wire Line
+	5200 4500 5200 4600
+Connection ~ 5200 4600
+Wire Wire Line
+	5350 4000 5200 4000
+Wire Wire Line
+	5200 4000 5200 2800
+Connection ~ 5200 2800
+Wire Wire Line
+	5200 2800 6050 2800
+Wire Wire Line
+	9950 3800 9950 4000
+Wire Wire Line
+	10000 4100 10000 3700
+Wire Wire Line
+	10050 3600 10050 4200
+Wire Wire Line
+	10100 4300 10100 3500
+Wire Wire Line
+	4450 3600 4750 3600
+Wire Wire Line
+	4750 3600 4750 3100
+Wire Wire Line
+	4750 3100 5350 3100
+Wire Wire Line
+	4450 3700 4800 3700
+Wire Wire Line
+	4800 3700 4800 3200
+Wire Wire Line
+	4800 3200 5350 3200
+Wire Wire Line
+	10100 3500 9900 3500
+Wire Wire Line
+	9900 3600 10050 3600
+Wire Wire Line
+	10000 3700 9900 3700
+Wire Wire Line
+	9900 3800 9950 3800
+$Comp
+L Device:R R4
+U 1 1 5E9ADB30
+P 9750 3800
+F 0 "R4" V 9543 3800 50  0000 C CNN
+F 1 "R220" V 9634 3800 50  0000 C CNN
+F 2 "" V 9680 3800 50  0001 C CNN
+F 3 "~" H 9750 3800 50  0001 C CNN
+	1    9750 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5E9AD521
+P 9750 3700
+F 0 "R3" V 9543 3700 50  0000 C CNN
+F 1 "R220" V 9634 3700 50  0000 C CNN
+F 2 "" V 9680 3700 50  0001 C CNN
+F 3 "~" H 9750 3700 50  0001 C CNN
+	1    9750 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5E9ACFEE
+P 9750 3600
+F 0 "R2" V 9543 3600 50  0000 C CNN
+F 1 "R220" V 9634 3600 50  0000 C CNN
+F 2 "" V 9680 3600 50  0001 C CNN
+F 3 "~" H 9750 3600 50  0001 C CNN
+	1    9750 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E9ABF85
+P 9750 3500
+F 0 "R1" V 9543 3500 50  0000 C CNN
+F 1 "R220" V 9634 3500 50  0000 C CNN
+F 2 "" V 9680 3500 50  0001 C CNN
+F 3 "~" H 9750 3500 50  0001 C CNN
+	1    9750 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Display_Character:CA56-12EWA Display
+U 1 1 5E999D36
+P 8500 3400
+F 0 "Display" H 8500 4067 50  0000 C CNN
+F 1 "ATA8041AB" H 8500 3976 50  0000 C CNN
+F 2 "Display_7Segment:CA56-12EWA" H 8500 2800 50  0001 C CNN
+F 3 "http://cdn.sparkfun.com/datasheets/Components/LED/1LEDBLUCC.pdf" H 8070 3430 50  0001 C CNN
+	1    8500 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 3100 7400 3100
+Wire Wire Line
+	6750 3200 7400 3200
+Wire Wire Line
+	6750 3300 7400 3300
+Wire Wire Line
+	6750 3400 7400 3400
+Wire Wire Line
+	6750 3500 7400 3500
+Wire Wire Line
+	6750 3600 7400 3600
+Wire Wire Line
+	6750 3700 7400 3700
+Wire Wire Line
+	6750 3800 7400 3800
+Wire Wire Line
+	6750 4000 9950 4000
+Wire Wire Line
+	6750 4100 10000 4100
+Wire Wire Line
+	6750 4200 10050 4200
+Wire Wire Line
+	6750 4300 10100 4300
+$EndSCHEMATC
