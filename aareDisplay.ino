@@ -18,10 +18,10 @@
 // Local config
 String API_URL = "http://aare.schwumm.ch/api/current?app=ch.existenz.aaredisplay&version=1.0.0 ";
 String API_temperaturkey = "temperature";
-int DTime = 4;            // [ms] Display refresh time
-float temperature = 0.0;  // [°C] Temperature value cache
-long mydelay = 10 * 1000; // [ms] Time between updates from webservice // TODO: Switch to 5 min
-long timer = millis();    // Global refresh timer
+int DTime = 4;             // [ms] Display refresh time
+float temperature = 0.0;   // [°C] Temperature value cache
+long mydelay = 300 * 1000; // [ms] Time between updates from webservice (5 min)
+long timer = millis();     // Global refresh timer
 
 void setup()
 {
