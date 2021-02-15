@@ -32,6 +32,10 @@ Note that I'm not an electrical engineer by trade and this has been my first tim
 
 Note also that the I2C-bus pins are correctly wired on the schematics, I fixed them in code.
 
+### `development_notes.md`
+
+Archived development notes (German).
+
 ## Known Issues
 
 - Display refresh: Every time the display fetches new data via HTTP (Every 5 minutes), it can no longer refresh the display LEDs and it flickers.
