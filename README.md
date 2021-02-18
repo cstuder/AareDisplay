@@ -4,7 +4,9 @@
 
 ESP8266 based display of the current Aare river temperature on a seven-segment display.
 
-(Long time in the making, but finally finished during the Corona lockdown in spring 2021.)
+Long time in the making, but finally finished during the Corona lockdown in spring 2021.
+
+More information (german) on my blog: [hymnos.existenz.ch](https://hymnos.existenz.ch/2021/02/18/aare-display/).
 
 ## Structure
 
